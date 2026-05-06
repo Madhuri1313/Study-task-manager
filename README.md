@@ -87,6 +87,13 @@ This project is built as a **frontend practice application** to demonstrate:
 
 ---
 
+
+## 🔗 Live Demo
+https://madhuri1313.github.io/Study-task-manager/
+
+
+---
+
 ## 👤 Author
 
 **Madhuri Shankar**
