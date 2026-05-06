@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="header-text">
+                <h1 class="header-title">📚 Student Tasks</h1>
+                <p class="header-subtitle">Stay focused, stay organized</p>
+            </div>
+            <button class="new-task-btn" id="newTaskBtn">+ New Task</button>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Statistics Cards -->
+        <section class="stats-section">
+            <div class="stat-card">
+                <div class="stat-icon">📊</div>
+                <div class="stat-content">
+                    <p class="stat-label">Total Tasks</p>
+                    <p class="stat-value" id="totalTasks">0</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">⏳</div>
+                <div class="stat-content">
+                    <p class="stat-label">Pending Tasks</p>
+                    <p class="stat-value" id="pendingTasks">0</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">✅</div>
+                <div class="stat-content">
+                    <p class="stat-label">Completed Tasks</p>
+                    <p class="stat-value" id="completedTasks">0</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Search and Filter Section -->
+        <section class="search-filter-section">
+            <input 
+                type="text" 
+                id="searchInput" 
+                class="search-input" 
+                placeholder="🔍 Search tasks..."
+            >
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="pending">Pending</button>
+                <button class="filter-btn" data-filter="completed">Completed</button>
+            </div>
+        </section>
+
+        <!-- Add Task Section -->
+        <section class="add-task-section">
+            <div class="input-group">
+                <input 
+                    type="text" 
+                    id="taskInput" 
+                    class="task-input" 
+                    placeholder="What's on your mind?"
+                >
+                <input 
+                    type="date" 
+                    id="taskDate" 
+                    class="task-date"
+                >
+                <button class="add-btn" id="addTaskBtn">Add Task</button>
+            </div>
+        </section>
+
+        <!-- Task List Section -->
+        <section class="tasks-section">
+            <div class="tasks-container" id="tasksContainer">
+                <div class="empty-state">
+                    <p class="empty-icon">📝</p>
+                    <p class="empty-text">No tasks yet. Add one to get started!</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Edit Task Modal -->
+    <div class="modal" id="editModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Edit Task</h2>
+                <button class="modal-close" id="modalClose">&times;</button>
+            </div>
+            <div class="modal-body">
+                <input 
+                    type="text" 
+                    id="editTaskInput" 
+                    class="modal-input" 
+                    placeholder="Task description"
+                >
+                <input 
+                    type="date" 
+                    id="editTaskDate" 
+                    class="modal-input"
+                >
+            </div>
+            <div class="modal-footer">
+                <button class="modal-btn cancel-btn" id="modalCancel">Cancel</button>
+                <button class="modal-btn save-btn" id="modalSave">Save Changes</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
